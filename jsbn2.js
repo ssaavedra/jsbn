@@ -1,3 +1,12 @@
+
+var BigInteger = BigInteger || require('./jsbn').BigInteger,
+    nbi = nbi || require('./jsbn').nbi,
+    nbv = nbv || require('./jsbn').nbv,
+    nbits = nbits || require('./jsbn').nbits,
+    Montgomery = Montgomery || require('./jsbn').Montgomery,
+    Classic = Classic || require('./jsbn').Classic;
+
+// 
 // Copyright (c) 2005-2009  Tom Wu
 // All Rights Reserved.
 // See "LICENSE" for details.
@@ -654,3 +663,6 @@ BigInteger.prototype.square = bnSquare;
 // int hashCode()
 // long longValue()
 // static BigInteger valueOf(long val)
+
+exports.BigInteger = BigInteger;
+

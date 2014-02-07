@@ -1,3 +1,7 @@
+
+var ECCurveFp = ECCurveFp || require('./ec').ECCurveFp,
+    BigInteger = BigInteger || require('./jsbn2').BigInteger;
+
 // Named EC curves
 
 // Requires ec.js, jsbn.js, and jsbn2.js
@@ -33,6 +37,7 @@ X9ECParameters.prototype.getCurve = x9getCurve;
 X9ECParameters.prototype.getG = x9getG;
 X9ECParameters.prototype.getN = x9getN;
 X9ECParameters.prototype.getH = x9getH;
+
 
 // ----------------
 // SECNamedCurves
@@ -155,3 +160,6 @@ function getSECCurveByName(name) {
     if(name == "secp256r1") return secp256r1();
     return null;
 }
+
+exports.X9ECParameters = X9ECParameters;
+

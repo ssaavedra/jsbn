@@ -56,6 +56,7 @@ ECFieldElementFp.prototype.multiply = feFpMultiply;
 ECFieldElementFp.prototype.square = feFpSquare;
 ECFieldElementFp.prototype.divide = feFpDivide;
 
+
 // ----------------
 // ECPointFp
 
@@ -341,3 +342,8 @@ ECCurveFp.prototype.fromBigInteger = curveFpFromBigInteger;
 ECCurveFp.prototype.reduce = curveReduce;
 ECCurveFp.prototype.decodePointHex = curveFpDecodePointHex;
 ECCurveFp.prototype.encodePointHex = curveFpEncodePointHex;
+
+exports.ECCurveFp = ECCurveFp;
+exports.ECFieldElementFp = ECFieldElementFp;
+exports.ECPointFp = ECPointFp;
+

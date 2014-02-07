@@ -28,6 +28,13 @@ function b64_hmac_sha1(k, d)
 function any_hmac_sha1(k, d, e)
   { return rstr2any(rstr_hmac_sha1(str2rstr_utf8(k), str2rstr_utf8(d)), e); }
 
+exports.hex_sha1 = hex_sha1;
+exports.b64_sha1 = b64_sha1;
+exports.any_sha1 = any_sha1;
+exports.hex_hmac_sha1 = hex_hmac_sha1;
+exports.b64_hmac_sha1 = b64_hmac_sha1;
+exports.any_hmac_sha1 = any_hmac_sha1;
+
 /*
  * Perform a simple self-test to see if the VM is working
  */

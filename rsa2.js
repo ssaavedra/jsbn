@@ -1,3 +1,9 @@
+
+var BigInteger = BigInteger || jrequire('./jsbn2').BigInteger,
+    SecureRandom = SecureRandom || require('./rng').SecureRandom;
+var RSAKey = RSAKey || require('./rsa').RSAKey;
+
+// 
 // Depends on rsa.js and jsbn2.js
 
 // Version 1.1: support utf-8 decoding in pkcs1unpad2
@@ -62,7 +68,7 @@ function RSAGenerate(B,E) {
   var rng = new SecureRandom();
   var qs = B>>1;
   this.e = parseInt(E,16);
-  var ee = new BigInteger(E,16);
+  var ee = new BigInteger(E,16, rng);
   for(;;) {
     for(;;) {
       this.p = new BigInteger(B-qs,1,rng);
@@ -130,3 +136,6 @@ RSAKey.prototype.setPrivateEx = RSASetPrivateEx;
 RSAKey.prototype.generate = RSAGenerate;
 RSAKey.prototype.decrypt = RSADecrypt;
 //RSAKey.prototype.b64_decrypt = RSAB64Decrypt;
+
+exports.RSAKey = RSAKey;
+

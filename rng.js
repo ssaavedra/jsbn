@@ -4,6 +4,15 @@
 // <body onClick='rng_seed_time();' onKeyPress='rng_seed_time();'>
 // in your main HTML document.
 
+if (typeof prng_newstate === "undefined") {
+	function prng_newstate() {
+		return new (require('./prng4').Arcfour);
+	}
+}
+
+var rng_psize = rng_psize || require('./prng4').rng_psize;
+
+
 var rng_state;
 var rng_pool;
 var rng_pptr;
@@ -73,3 +82,6 @@ function rng_get_bytes(ba) {
 function SecureRandom() {}
 
 SecureRandom.prototype.nextBytes = rng_get_bytes;
+
+exports.SecureRandom = SecureRandom;
+
